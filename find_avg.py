@@ -2,16 +2,19 @@ import pandas as pd
 import os
 import numpy as np
 
+###要改的地方###
 data_address = "C:/Users/a0985/OneDrive/Desktop/"
 
 
 def read_data() :
     global data_address
+    ###要改的地方###
     data_name = data_address + "test" + ".xlsx"
     
     origin_df = pd.DataFrame() #儲存原始檔的dataframe
     
     if os.path.isfile(data_name) : #有此檔案
+        ###要改的地方###
         origin_df = pd.read_excel(data_name, sheet_name = '工作表1', header = None) #讀取excel
     else:                          #查無此檔
         print("no data")
@@ -50,7 +53,8 @@ def slice_into_ten_peice(origin_df) :
  
 def output_to_excel(result) :
     global data_address
-    output_name = data_address + "test_result" + ".xlsx"
+    ###要改的地方###
+    output_name = data_address + "胖班代" + ".xlsx"
     result.to_excel(output_name)
 
 if __name__ == "__main__" : 
